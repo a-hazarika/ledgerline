@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Invoice {{invoice.number}}</title>
+  </head>
+  <body style="margin:0;padding:24px;background:#f4f5f7;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1c1e21;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:640px;margin:0 auto;background:#ffffff;border-radius:8px;overflow:hidden;">
+      <tr>
+        <td style="padding:20px 28px;border-top:4px solid {{brand.color}};">
+          <img src="{{brand.logo}}" alt="{{brand.name}}" height="36" style="display:block;border:0;" />
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:0 28px 8px 28px;">
+          <p style="margin:0 0 4px 0;font-size:13px;color:#6b7280;">Invoice from</p>
+          <p style="margin:0;font-size:18px;font-weight:600;">{{brand.name}}</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:16px 28px;">
+          <p style="margin:0 0 12px 0;">Hello {{customer.name}},</p>
+          <p style="margin:0 0 16px 0;">
+            Invoice <strong>{{invoice.number}}</strong> was issued on {{invoice.issued}} and is
+            due on <strong>{{invoice.due}}</strong>.
+          </p>
+
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:14px;">
+            <thead>
+              <tr style="text-align:left;color:#6b7280;font-size:12px;text-transform:uppercase;">
+                <th style="padding:6px 0;border-bottom:1px solid #e5e7eb;">Description</th>
+                <th style="padding:6px 0;border-bottom:1px solid #e5e7eb;text-align:right;">Qty</th>
+                <th style="padding:6px 0;border-bottom:1px solid #e5e7eb;text-align:right;">Unit</th>
+                <th style="padding:6px 0;border-bottom:1px solid #e5e7eb;text-align:right;">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{invoice.lines}}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3" style="padding:8px 0 0 0;text-align:right;color:#6b7280;">Subtotal</td>
+                <td style="padding:8px 0 0 0;text-align:right;">{{invoice.subtotal}}</td>
+              </tr>
+              <tr>
+                <td colspan="3" style="padding:2px 0;text-align:right;color:#6b7280;">Tax</td>
+                <td style="padding:2px 0;text-align:right;">{{invoice.tax}}</td>
+              </tr>
+              <tr>
+                <td colspan="3" style="padding:8px 0;text-align:right;font-weight:600;">Total due</td>
+                <td style="padding:8px 0;text-align:right;font-weight:600;color:{{brand.color}};">{{invoice.total}}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:0 28px 16px 28px;">
+          <p style="margin:0;font-size:13px;color:#6b7280;">
+            Open invoices on your account: {{summary.count}} &middot; {{summary.balance}} outstanding.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:16px 28px;background:#f9fafb;border-top:1px solid #e5e7eb;">
+          <p style="margin:0 0 6px 0;font-size:13px;font-weight:600;">Remit to</p>
+          <p style="margin:0;font-size:13px;color:#374151;">{{brand.remit}}</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:14px 28px 22px 28px;">
+          <p style="margin:0;font-size:11px;color:#9ca3af;">{{brand.footer}}</p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

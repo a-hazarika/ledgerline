@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="40" viewBox="0 0 220 40">
+  <rect x="0" y="6" width="28" height="28" rx="6" fill="#2f6f4e"/>
+  <path d="M8 26 L14 14 L20 26 Z" fill="#ffffff"/>
+  <text x="38" y="26" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#1f3d2b">Northwind Studio</text>
+</svg>

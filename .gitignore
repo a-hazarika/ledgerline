@@ -1,0 +1,10 @@
+bin/
+obj/
+node_modules/
+dist/
+.vs/
+.vscode/
+.idea/
+*.user
+.env
+TestResults/
